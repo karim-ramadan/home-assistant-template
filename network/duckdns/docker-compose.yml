@@ -1,0 +1,16 @@
+---
+version: "2.1"
+services:
+  duckdns:
+    image: linuxserver/duckdns
+    container_name: duckdns
+    environment:
+      - PUID=1000 
+      - PGID=1000
+      - TZ=Europe/Rome
+      - SUBDOMAINS=krapps
+      - TOKEN=${TOKEN}
+      - LOG_FILE=true 
+    volumes:
+      - ./data/config:/config 
+    restart: unless-stopped

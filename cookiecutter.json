@@ -1,0 +1,11 @@
+{
+  "project_name": "Home Assistant Server",
+  "repo_name": "{{ cookiecutter.project_name|lower|replace(' ', '_') }}",
+  "domain_name": "homeassistant.yourdomain.com",
+  "email": "you@example.com",
+  "mqtt_user": "mqtt_user",
+  "mqtt_password": "mqtt_password",
+  "zigbee_usb_device": "/dev/ttyUSB0",
+  "docker_network_name": "homeassistant_network",
+  "default_container_restart_policy": "always"
+}
