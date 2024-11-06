@@ -1,16 +1,16 @@
 ---
-version: "2.1"
+version: "3"
 services:
   duckdns:
     image: linuxserver/duckdns
     container_name: duckdns
     environment:
-      - PUID=1000 
+      - PUID=1000
       - PGID=1000
-      - TZ=Europe/Rome
-      - SUBDOMAINS=krapps
+      - TZ={{ cookiecutter.timezone }}
+      - SUBDOMAINS={{ cookiecutter.duckdns_subdomain }}
       - TOKEN=${TOKEN}
-      - LOG_FILE=true 
+      - LOG_FILE=true
     volumes:
-      - ./data/config:/config 
+      - ./data/config:/config
     restart: unless-stopped

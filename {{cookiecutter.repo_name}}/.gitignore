@@ -1,0 +1,7 @@
+.idea
+data
+hass/home-assistant/config
+!hass/home-assistant/config/*.yaml
+.env
+log
+!hass/zigbee2mqtt/data/*.yaml

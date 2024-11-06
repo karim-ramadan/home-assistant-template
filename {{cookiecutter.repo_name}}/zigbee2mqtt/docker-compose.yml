@@ -8,8 +8,8 @@ services:
       - ./data:/app/data
       - /etc/localtime:/etc/localtime:ro
     environment:
-      - TZ=Europe/Rome
+      - TZ={{ cookiecutter.timezone }}
     devices:
-      - ${ADAPTER_LOCATION}:/dev/ttyUSB0
-    restart: always
+      - {{ cookiecutter.zigbee_usb_device }}:/dev/ttyUSB0
+    restart: "{{ cookiecutter.default_container_restart_policy }}"
     stop_grace_period: 60s

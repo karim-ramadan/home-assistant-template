@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  homeassistant:
+    image: homeassistant/home-assistant:latest
+    volumes:
+      - ./config:/config
+      - /etc/timezone:/etc/timezone:ro
+    restart: "{{ cookiecutter.default_container_restart_policy }}"
+    ports:
+      - 8123:8123
+      - 51827:51827
+      - "5684:5683/udp"
+    environment:
+      - TZ={{ cookiecutter.timezone }}
+      - VIRTUAL_HOST={{ cookiecutter.domain_name }}
+      - VIRTUAL_PORT=8123
+      - LETSENCRYPT_HOST={{ cookiecutter.domain_name }}
+      - LETSENCRYPT_EMAIL={{ cookiecutter.email }}
+      - PUID=1000
+      - GUID=1000

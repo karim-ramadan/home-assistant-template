@@ -28,7 +28,7 @@ shift $((OPTIND - 1))
 dop() {
   if [ -z "$1" ]; then exit 1; fi
   cd "$DIR/$1"
-  if [ -f docker-compose.yml ]; then 
+  if [ -f docker-compose.yml ]; then
     if [ -f disable -o "$alldown" = "1" ]; then
       echo "DOWN $1"
       docker-compose down -t 60 -v --remove-orphans || true
