@@ -13,9 +13,9 @@ scene: !include scenes.yaml
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - 127.0.0.1
-    - 172.16.0.0/12
-    - 192.168.0.0/16
+    - 127.0.0.1 #local machine
+    - 172.16.0.0/12 #Docker subnet (private addressing space)
+    - 192.168.0.0/16 #Usal Home subnet (private addressing space)
 
 alexa:
   smart_home:

@@ -13,4 +13,4 @@ services:
       - LOG_FILE=true
     volumes:
       - ./data/config:/config
-    restart: unless-stopped
+    restart: "{{ cookiecutter.default_container_restart_policy }}"
