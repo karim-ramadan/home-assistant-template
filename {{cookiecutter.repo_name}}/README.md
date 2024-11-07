@@ -54,15 +54,22 @@ Home Assistant via MQTT. It works with various Zigbee coordinators (USB sticks).
 1. Inside of your DNS provider setup up:
 
 - If you have a static IP address an A record pointing to your static IP
-- If you have a public IP but it is not static Set up a CNAME pointing to {{ cookiecutter.duckdns_subdomain }}
+- If you have a public IP but it is not static:
+    1. Go to https://www.duckdns.org/ create a subdomain with the same name you of {{ cookiecutter.duckdns_subdomain }} 
+       if not available change it at [docker-compose.yml](duckdns%2Fdocker-compose.yml)
+    2. Copy the Token from the duckdns website
+    3. Create a .env file inside of [duckdns](duckdns) containing:
+       TOKEN=<your-duckdns-token>
+    4. Set up a CNAME pointing to {{ cookiecutter.duckdns_subdomain }} 
 
-1. Run the `dcup` script to start all services:
+
+2. Run the `dcup` script to start all services:
 
    ```bash
    ./dcup
    ```
 
-1. Access the Home Assistant UI via `https://<your_domain>`. The other services (like Mosquitto and Zigbee2MQTT) will be
+3. Access the Home Assistant UI via `https://<your_domain>`. The other services (like Mosquitto and Zigbee2MQTT) will be
    running in the background, allowing Home Assistant to interact with your IoT devices.
 
 ## Useful Commands
