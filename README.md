@@ -18,9 +18,7 @@ and deployment.
 First, clone this repository and generate a project from the template:
 
 ```bash
-git clone https://github.com/karim-ramadan/home-assistant-template
-cd home-assistant-template
-cookiecutter.
+cookiecutter gh:karim-ramadan/home-assistant-template
 ```
 
 Now you are ready to set up your own home assistant instance 
